@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Poppins&display=swap');
+.overlay {
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    display: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+input:-internal-autofill-selected {
+    background: transparent;
+}
+body {
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    margin: 0px;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    word-wrap: break-word;
+}
+.book-form {
+    background: linear-gradient(180deg, #4b6cb7 0%, #182848 100%);
+    transform: scale(0);
+    z-index: 2;
+    color: white;
+    position: fixed;
+    border-radius: 20px;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -150px;
+    margin-top: -200px;
+    transition: all 0.2s;
+}
+.book-form.active {
+    transform: scale(1);
+}
+@keyframes popup {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1.0);
+    }
+}
+@keyframes close-popup {
+    0%{
+        transform: scale(1.0);
+    }
+    100%{
+        transform: scale(0);
+    }
+}
+.addbtn {
+    margin: auto;
+    font-family: 'Poppins';
+    font-size: 1.1em;
+    display: block;
+    margin-top: 40px;
+    width: 120px;
+    height: 60px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+.book-card {
+    font-family: 'Oswald';
+    position: relative;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    text-align: center;
+    color: gold;
+    padding: 20px;
+    border-top-left-radius: 2%;
+    height: 80%;
+    background-color: brown;
+    box-shadow: 5px 5px 0px rgb(185, 185, 154),6px 6px 0px gray;
+    animation: popup 0.2s;
+}
+.book-card::before {
+    position: absolute;
+    content: "";
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    left: 10px;
+    top: 10px;
+    background-color: rgb(185, 185, 154);
+    box-shadow: 5px 5px 0px brown ;
+}
+.removebtn {
+    border: 2px solid gold;
+    border-radius: 20px;
+    width: 100px;
+    align-self: center;
+}
+.removebtn:hover {
+    background-color: purple;
+}
+.statusbtn {
+    border: 2px solid gold;
+    width: 70px;
+    align-self: center;
+    border-radius: 20px;
+}
+.statusbtn:hover {
+    background-color: purple;
+}
+.head {
+    text-align: center;
+    padding: 10px;
+    font-family: 'Poppins';
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
+    font-size: 3em;
+}
+.main-content {
+    max-width: 800px;
+    padding: 20px;
+    margin: auto;
+    gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+}
+body form div {
+    position: relative;
+}
+body form div label {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    transition: 0.5s;
+}
+body form div input {
+    padding: 10px 10px;
+    background: transparent;
+    box-sizing: border-box;
+    color: white;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid black;
+    font-size: 1em;
+}
+body form div input:focus ~ label{
+    padding: 0px 5px;
+    top: -10px;
+    left: 5px;
+}
+body form div label.valid {
+    padding: 0px 5px;
+    top: -10px;
+    left: 5px;
+}
+.status label {
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+.status {
+    display: flex;
+    align-items: center;
+}
+input[type="submit"] {
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 1.2em;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    transition: all 0.2s;
+}
+input[type="submit"]:hover {
+    background-color: white;
+    color: black;
+}
+#bcheck {
+    position: relative;
+    appearance: none;
+    width: 50px;
+    height: auto;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 15px;
+    transition: 0.4s;
+}
+#bcheck::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-color: rgb(188, 171, 206);
+    border: 2px solid black;
+    border-radius: 25px;
+    position: absolute;
+    left: -3px;
+    top: -4px;
+    transition: 0.2s ease-in-out;
+}
+#bcheck:checked {
+    background-color: rgb(43, 186, 43);
+}
+#bcheck:checked::before {
+    left: 21px;
+    top: -4px;
+}

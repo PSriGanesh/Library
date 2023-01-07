@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="head">Library</div>
+    <button class="addbtn" onclick="toggle()">Add Book</button>
+    <div class="overlay"></div>
+    <form class="book-form">
+        <h3 style="text-align: center;">Add Book</h5>
+        <div>
+            <input id = "bname" type="text" autocomplete="off" required>
+            <label for="bname">Book name</label>
+        </div><br>
+        <div>
+            <input id = "bauthor"  type="text" autocomplete="off" required>
+            <label for="bauthor">Author</label>
+        </div><br>
+        <div>
+            <input id = "bpages"  type="number" autocomplete="off" required>
+            <label for="bpages">No. of pages</label>
+        </div><br>
+        <div class="status">
+            <label for="bcheck">Have you read the book?</label>
+            <input type="checkbox" id="bcheck">
+        </div><br>
+        <input type="submit" onclick="createBook(event)"value="Submit">
+    </form>
+    <div class="main-content">
+        
+    </div>
+</body>
+</html>
